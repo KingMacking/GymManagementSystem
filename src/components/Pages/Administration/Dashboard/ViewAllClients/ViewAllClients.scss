@@ -1,0 +1,35 @@
+@import '../../../../sass/Mixins.scss';
+@import '../../../../sass/Variables.scss';
+
+.all-clients-container {
+    background-color: $primary-shadow;
+    padding: 3% 10%;
+    font-family: $font-text;
+    @include flex(default, space-around, center, wrap);
+}
+.all-clients-client{
+    width: 300px;
+    height: 130px;
+    @include flex(default, space-around, center, default);
+    background-color: $primary;
+    border-radius: 25px;
+    padding: 10px 25px;
+    margin: 2vh 1vw;
+    color: $base;
+    text-decoration: none;
+    box-shadow: 10px 10px 9px -3px rgba(0,0,0,0.4);
+    transition: all ease-in-out 150ms;
+    &-icon{
+        font-size: clamp(0.769rem, 1vw + 1rem, 1.538rem);
+        margin-right: 30px;
+    }
+    &-info {
+        font-size: clamp(0.769rem, 1vw + 1rem, 1.538rem);
+    }
+    &:hover {
+        transform: scale(1.1);
+        color: $secondary;
+        border: 1px solid $secondary;
+        transition: all ease-in-out 150ms;
+    }
+}

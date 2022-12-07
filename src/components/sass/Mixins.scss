@@ -1,0 +1,66 @@
+/*FLEX*/
+@mixin flex($dir, $jus, $alg, $wrap) {
+    display: flex;
+    @if $dir == default {
+        flex-direction: row;
+    } @else {
+        flex-direction: $dir;
+    }
+    @if $jus == default {
+        justify-content: flex-start;
+    } @else {
+        justify-content: $jus;
+    }
+    @if $alg == default {
+        align-items: stretch;
+    } @else {
+        align-items: $alg;
+    }
+    @if $wrap == default {
+        flex-wrap: nowrap;
+    } @else {
+        flex-wrap: $wrap;
+    }
+}
+
+/*TEXT SHORTENING*/
+@mixin text-shorten($numLines: 1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    @supports (-webkit-line-clamp: $numLines) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: initial;
+        display: -webkit-box;
+        -webkit-line-clamp: $numLines;
+        -webkit-box-orient: vertical;
+    }
+}
+
+/*MEDIA QUERIES*/
+@mixin screen($size) {
+    $desktop: "(min-width: 1024px)";
+    $tablet: "(min-width: 768px) and (max-width: 1023px)";
+    $mobile: "(max-width: 767px)";
+    @if $size == desktop {
+        @media only screen and #{&desktop}{
+            @content;
+        }
+    }
+    @else if $size == tablet {
+        @media only screen and #{$tablet}{
+            @content;
+        }
+    }
+    @else if $size == mobile {
+        @media only screen and #{$mobile}{
+            @content;
+        }
+    }
+    @else {
+        @media only screen and #{$size}{
+            @content;
+        }
+    }
+}

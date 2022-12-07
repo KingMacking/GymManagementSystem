@@ -1,0 +1,53 @@
+@import '../../../sass/Mixins.scss';
+@import '../../../sass/Variables.scss';
+.dashboard {
+    @include flex(default, flex-start, center, wrap);
+    padding: 5% 10%;
+    font-family: $font-text;
+    font-size: 25px;
+    background-color: $primary-shadow;
+    &-item {
+        width: 300px;
+        height: 130px;
+        @include flex(default, space-around, center, default);
+        background-color: $primary;
+        border-radius: 25px;
+        padding: 10px 25px;
+        margin: 2vh 1vw;
+        color: $base;
+        text-decoration: none;
+        box-shadow: 10px 10px 9px -3px rgba(0,0,0,0.4);
+        transition: all ease-in-out 150ms;
+        &-icon{
+            font-size: 50px;
+            margin-right: 30px;
+        }
+        &-title{
+            font-size: 25px;
+        }
+        &:hover {
+            transform: scale(1.1);
+            color: $secondary;
+            border: 1px solid $secondary;
+            transition: all ease-in-out 150ms;
+        }
+    }
+    &-button{
+        width: 300px;
+        height: 130px;
+        @include flex(default, space-around, center, default);
+        background-color: rgb(168, 0, 0);
+        border-radius: 25px;
+        padding: 10px 15px;
+        margin: 2vh 1vw;
+        border: none;
+        color: $base;
+        transition: all ease-in-out 150ms;
+        box-shadow: 10px 10px 9px -3px rgba(0,0,0,0.4);
+        &:hover {
+            transform: scale(1.1);
+            border: 2px solid $base;
+            transition: all ease-in-out 150ms;
+        }
+    }
+}

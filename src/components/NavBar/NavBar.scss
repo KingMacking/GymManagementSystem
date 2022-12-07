@@ -1,0 +1,71 @@
+@import '../sass/Variables.scss';
+@import '../sass/Mixins.scss';
+
+header {
+    .navbar {
+        background-color: $primary;
+        padding: 15px 20px;
+        .container-fluid {
+            .navbar-brand{
+                margin: 0;
+                width: 200px;
+                img {
+                    width: 100%;
+                }
+            }
+            .navbar-toggler{
+                color: $base;
+                &:focus{
+                    box-shadow: none;
+                }
+                .navbar-toggler-icon{
+                    color: $base;
+                }
+            }
+            .navbar-collapse {
+                justify-content: flex-end;
+                .navbar-nav{
+                    .nav-item{
+                        width: fit-content;
+                        margin: 0 10px;
+                        .nav-link{
+                            color: $base;
+                            border-left: 3px solid #424242;
+                            padding-left: 12px;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            margin: 5px 0;
+                            transition: all ease-in-out 150ms;
+                            &:hover{
+                                border-left: 3px solid $secondary;
+                                transition: all ease-in-out 150ms;
+                            }
+                        }
+                        .dropdown-menu{
+                            background-color: $primary-shadow;
+                            transition: all ease-in-out 150ms;
+                            .dropdown-item{
+                                color: $base;
+                                border-left: solid 2px #424242;
+                                margin: 10px 15px;
+                                padding: 0 5px;
+                                width: auto;
+                                transition: all ease-in-out 150ms;
+                                &:hover {
+                                    border-left: solid 2px $secondary;
+                                    background-color: $primary-shadow;
+                                    transition: all ease-in-out 150ms;
+                                }
+                                &:focus {
+                                    background-color: $primary-shadow;
+                                    border-left: solid 2px $secondary;
+                                    transition: all ease-in-out 150ms;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

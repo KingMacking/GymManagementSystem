@@ -1,0 +1,9 @@
+@import '../../../../sass/Mixins.scss';
+@import '../../../../sass/Variables.scss';
+
+.client-detail-container {
+    background-color: $primary-shadow;
+    padding: 3% 10%;
+    font-family: $font-text;
+    @include flex(column, space-around, center, default);
+}

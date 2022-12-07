@@ -1,0 +1,67 @@
+@import '../../../sass/Mixins.scss';
+@import '../../../sass/Variables.scss';
+
+.login {
+    background-color: $primary-shadow;
+    padding: 3% 10%;
+    font-family: $font-text;
+    font-size: clamp(0.75rem, 2vw + 1rem, 1.563rem);
+    @include flex(column, space-around, center, default);
+    &-title {
+        background-color: $primary;
+        width: fit-content;
+        min-width: 310px;
+        padding: 10px 15px;
+        font-size: clamp(0.75rem, 2vw + 1rem, 2.5rem);
+        color: $base;
+        border-radius: 15px;
+        margin-bottom: 40px;
+        font-family: $font-principal;
+        text-align: center;
+        box-shadow: 10px 10px 9px -3px rgba(0,0,0,0.4);
+    }
+    &-form {
+        background-color: $primary;
+        box-shadow: 10px 10px 9px -3px rgba(0,0,0,0.4);
+        padding: 4vh 2.5vw;
+        width: fit-content;
+        border-radius: 20px;
+        height: auto;
+        @include flex(column, space-around, flex-start, default);
+        .login-input-title {
+            color: $secondary;
+            font-size: clamp(0.75rem, 2vw + 1rem, 1.563rem);
+        }
+        .login-input {
+            background-color: $primary-shadow;
+            color: $base;
+            border: none;
+            border-radius: 10px;
+            width: 290px;
+            height: 50px;
+            padding: 10px 15px;
+            font-size: clamp(0.5rem, 1vw + 1rem, 1.563rem);
+            margin-bottom: 30px;
+        }
+        .login-error {
+            width: 290px;
+            height: auto;
+            color: $base;
+            margin-bottom: 30px;
+            margin-top: -15px;
+        }
+        .login-button {
+            width: 100%;
+            background-color: $secondary;
+            color: $primary;
+            border: none;
+            border-radius: 15px;
+            height: 60px;
+            &:hover {
+                border: solid 2px $secondary;
+                background-color: $primary-shadow;
+                color: $base;
+            }
+        }
+    }
+}

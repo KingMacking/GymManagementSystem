@@ -1,0 +1,99 @@
+@import '../../../../sass/Mixins.scss';
+@import '../../../../sass/Variables.scss';
+
+.find-client {
+    background-color: $primary-shadow;
+    padding: 3% 10%;
+    font-family: $font-text;
+    @include flex(column, space-around, center, default);
+    &-container {
+        @include flex(column, space-around, center, default);
+        margin-bottom: 70px;
+        .find-client-title{
+            background-color: $primary;
+            min-width: 310px;
+            width: fit-content;
+            padding: 10px 15px;
+            font-size: clamp(0.75rem, 2vw + 1rem, 2.5rem);
+            color: $base;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            font-family: $font-principal;
+            text-align: center;
+            box-shadow: 10px 10px 9px -3px rgba(0,0,0,0.4);
+        }
+        .find-client-form {
+            background-color: $primary;
+            box-shadow: 10px 10px 9px -3px rgba(0,0,0,0.4);
+            padding: 20px 30px;
+            min-width: 310px;
+            width: fit-content;
+            border-radius: 20px;
+            height: auto;
+            @include flex(column, default, flex-start, default);
+            color: $base;
+            &-text {
+                font-size: clamp(0.875rem, 1vw + 1rem, 1.5rem);
+                margin-bottom: 30px;
+                text-align: center;
+                width: 100%;
+            }
+            &-input {
+                background-color: $primary-shadow;
+                color: $base;
+                border: none;
+                border-radius: 10px;
+                width: 100%;
+                height: 50px;
+                padding: 10px 15px;
+                font-size: clamp(0.5rem, 1vw + 1rem, 1.563rem);
+                margin-bottom: 10px;
+            }
+            &-error {
+                width: auto;
+                height: auto;
+                color: $secondary;
+            }
+            &-button{
+                width: 100%;
+                background-color: $secondary;
+                font-size: clamp(0.5rem, 1vw + 1rem, 1.563rem);
+                color: $primary;
+                border: none;
+                border-radius: 15px;
+                height: 60px;
+                margin-top: 40px;
+                &:hover {
+                    border: solid 2px $secondary;
+                    background-color: $primary-shadow;
+                    color: $base;
+                }
+            }
+        }
+    }
+    .client-data-container {
+        background-color: $primary;
+        box-shadow: 10px 10px 9px -3px rgba(0,0,0,0.4);
+        padding: 20px 30px;
+        min-width: 310px;
+        width: fit-content;
+        border-radius: 20px;
+        height: auto;
+        @include flex(column, default, flex-start, default);
+        color: $base;
+        .client-data-title {
+            margin-bottom: 20px;
+            text-align: start;
+            width: 100%;
+            padding: 10px 0;
+            font-size: clamp(0.75rem, 2vw + 1rem, 2.5rem);
+            border-bottom: 2px solid $secondary;
+        }
+        .client-data-info{
+            font-size: clamp(0.833rem, 1vw + 1rem, 1.667rem);
+            margin-bottom: 10px;
+            text-align: start;
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,149 @@
+@import '../../sass/Mixins.scss';
+@import '../../sass/Variables.scss';
+
+.main {
+    height: auto;
+    width: 100%;
+    &-banner {
+        background-image: url(https://images.unsplash.com/photo-1574680096145-d05b474e2155?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80);
+        background-size: cover;
+        background-position: top;
+        height: 90vh;
+        .banner-container {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            margin: 0;
+            padding: 0 10%;
+            @include flex(column, center, flex-start, default);
+            .banner-title {
+                font-family: $font-principal;
+                color: $base;
+                font-size: clamp(1.765rem, 3vw + 1.5rem, 3.929rem);
+                margin-bottom: 10px;
+            }
+            .banner-subtitle{
+                font-family: $font-text;
+                color: $secondary;
+                font-size: clamp(0.938rem, 4vw - 1rem, 1.75rem);
+                margin-bottom: 40px;
+            }
+            .banner-text {
+                font-family: $font-text;
+                color: $base;
+                font-size: clamp(0.938rem, 4vw - 1rem, 1.25rem);
+            }
+            .banner-button {
+                width: 50%;
+                background-color: $secondary;
+                color: $primary;
+                border: none;
+                border-radius: 15px;
+                height: 60px;
+                margin-top: 20px;
+                font-size: clamp(0.938rem, 4vw - 1rem, 1.25rem);
+                font-family: $font-text;
+                &:hover {
+                    border: solid 2px $secondary;
+                    background-color: $primary-shadow;
+                    color: $base;
+                }
+            }
+        }
+    }
+    &-gym {
+        padding: 7% 15%;
+        background-color: $base;
+        .gym-container {
+            @include flex(default, space-evenly, center, wrap);
+            .gym-item{
+                min-width:300px;
+                width: 30%;
+                height: 400px;
+                margin: 30px 5px;
+                transition: all ease-in-out 150ms;
+                border-radius: 20px;
+                box-shadow: 10px 10px 9px -3px rgba(0,0,0,0.4);
+                &:hover{
+                    transform: scale(1.1);
+                    transition: all ease-in-out 150ms;
+                }
+                &:nth-child(1){
+                    background-image: url(https://images.unsplash.com/photo-1517344368193-41552b6ad3f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+                    background-size: cover;
+                    background-position: top;
+                }
+                &:nth-child(2){
+                    background-image: url(https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1075&q=80);
+                    background-size: cover;
+                    background-position: top;
+                }
+                &:nth-child(3){
+                    background-image: url(https://images.unsplash.com/photo-1554284126-aa88f22d8b74?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1594&q=80);
+                    background-size: cover;
+                    background-position: top;
+                }
+                &-info {
+                    @include flex(column, center, center, default);
+                    margin: auto 0;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.6);
+                    color: $base;
+                    padding: 5% 10%;
+                    transition: all ease-in-out 150ms;
+                    border-radius: 20px;
+                    &:hover{
+                        color: $secondary;
+                        transition: all ease-in-out 150ms;
+                    }
+                    .gym-item-icon{
+                        font-size: 70px;
+                    }
+                    .gym-item-title{
+                        font-family: $font-principal;
+                        font-size: 35px;
+                    }
+                    .gym-item-text{
+                        font-family: $font-text;
+                    }
+                }
+            }
+        }
+    }
+    &-about-us {
+        padding: 7% 15%;
+        background-color: $base;
+        .about-us-container{
+            @include flex(default, space-evenly, flex-start, wrap);
+            .about-us-image {
+                background-image: url(https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+                background-size: cover;
+                background-position: top;
+                min-width:320px;
+                width: 45%;
+                height: 700px;
+                box-shadow: 10px 10px 9px -3px rgba(0,0,0,0.4);
+            }
+            .about-us-detail {
+                width: 50%;
+                min-width: 300px;
+                .about-us-title{
+                    font-family: $font-principal;
+                    font-size: clamp(1.25rem, 3vw + 2.5rem, 5rem);
+                    line-height: 70px;
+                    margin-bottom: 0;
+                }
+                .about-us-subtitle{
+                    font-family: $font-principal;
+                    font-size: clamp(0.938rem, 2vw + 1rem, 2.188rem);
+                    color: $secondary;
+                    margin-bottom: 20px;
+                }
+                .about-us-text{
+                    font-family: $font-text;
+                    font-size: clamp(0.813rem, 4vw - 1rem, 1.25rem);
+                }
+            }
+        }
+    }
+}
