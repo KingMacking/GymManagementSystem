@@ -7,6 +7,7 @@ import { useUserContext } from '../../../../../context/UserContext'
 import Login from '../../Login/Login'
 
 import './ClientDetailContainer.scss'
+import HomeBtn from '../HomeBtn/HomeBtn'
 
 const ClientDetailContainer = () => {
     const [clientData, setClientData] = useState()
@@ -25,9 +26,12 @@ const ClientDetailContainer = () => {
     if(user) {
         if (user.role === "admin") {
             return (
-                <div className='client-detail-container'>
-                    {isLoading ? <Ring size={40} lineWeight={5} speed={2} color={"black"} /> : <ClientDetail clientData={clientData}/>}
-                </div>
+                <>
+                    <HomeBtn />
+                    <div className='client-detail-container'>
+                        {isLoading ? <Ring size={40} lineWeight={5} speed={2} color={"black"} /> : <ClientDetail clientData={clientData}/>}
+                    </div>
+                </>
             )
         } else {
             return (

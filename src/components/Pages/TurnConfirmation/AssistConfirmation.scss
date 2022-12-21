@@ -3,6 +3,7 @@
 
 .turn-confirm {
     @include flex(column, default, center, default);
+    height: 90vh;
     .assist-confirmation {
         background-color: $primary-shadow;
         padding: 3% 10%;

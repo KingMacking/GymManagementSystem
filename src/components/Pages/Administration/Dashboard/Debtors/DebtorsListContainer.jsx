@@ -4,6 +4,7 @@ import { DateTime } from 'luxon'
 import { useEffect, useState } from 'react'
 import { useUserContext } from '../../../../../context/UserContext'
 import Login from '../../Login/Login'
+import HomeBtn from '../HomeBtn/HomeBtn'
 import Debtor from './Debtor'
 
 import './DebtorsListContainer.scss'
@@ -35,12 +36,15 @@ const DebtorsListContainer = () => {
     if(user) {
         if (user.role === "admin") {
             return (
-                <div className='debtors-list-container'>
-                    {isLoading ? <Ring size={40} lineWeight={5} speed={2} color={"black"} />
-                        :
-                        debtors.map((debtor, index) =>(<Debtor key={index} debtor={debtor}/>))
-                    }
-                </div>
+                <>
+                    <HomeBtn />
+                    <div className='debtors-list-container'>
+                        {isLoading ? <Ring size={40} lineWeight={5} speed={2} color={"black"} />
+                            :
+                            debtors.map((debtor, index) =>(<Debtor key={index} debtor={debtor}/>))
+                        }
+                    </div>
+                </>
             )
         } else {
             return (

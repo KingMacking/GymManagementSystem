@@ -1,0 +1,85 @@
+@import '../../sass/Mixins.scss';
+@import '../../sass/Variables.scss';
+
+.about-us{
+    height: auto;
+    width: 100%;
+    &-banner{
+        background-image: url(https://images.unsplash.com/photo-1574680096145-d05b474e2155?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80);
+        background-size: cover;
+        background-position: top;
+        height: 90vh;
+        .banner-container {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            margin: 0;
+            padding: 0 10%;
+            text-align: center;
+            @include flex(column, center, flex-start, default);
+            .banner-title {
+                font-family: $font-principal;
+                color: $base;
+                font-size: clamp(1.765rem, 3vw + 1.5rem, 3.929rem);
+                margin-bottom: 10px;
+            }
+            .banner-text {
+                font-family: $font-text;
+                color: $base;
+                font-size: clamp(0.938rem, 4vw - 1rem, 1.25rem);
+            }
+            
+            .banner-button-container{
+                width: fit-content;
+                .banner-button {
+                    width: fit-content;
+                    color: $secondary;
+                    margin-top: 20px;
+                    font-size: clamp(7.5rem, 13vw + 1rem, 9.375rem);
+                    font-family: $font-text;
+                }
+            }
+        }
+    }
+    .about-us-info{
+        padding: 7% 15%;
+        background-color: $base;
+        &-container{
+            @include flex(default, space-evenly, flex-start, wrap);
+            margin-bottom: 70px;
+            .about-us-info-image{
+                background-image: url(https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+                background-size: cover;
+                background-position: top;
+                min-width:320px;
+                width: 45%;
+                height: 700px;
+                box-shadow: 10px 10px 9px -3px rgba(0,0,0,0.4);
+                border-radius: 20px;
+                &:nth-child(2){
+                    background-image: url(https://images.unsplash.com/photo-1638805981949-362f5964521e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+                }
+            }
+            .about-us-info-detail{
+                width: 50%;
+                min-width: 300px;
+                .about-us-info-title{
+                    font-family: $font-principal;
+                    font-size: clamp(1.25rem, 3vw + 2.5rem, 5rem);
+                    line-height: 70px;
+                    margin-bottom: 10px;
+                }
+                .about-us-info-subtitle{
+                    font-family: $font-principal;
+                    font-size: clamp(0.938rem, 2vw + 1rem, 2.188rem);
+                    color: $secondary;
+                    margin-bottom: 20px;
+                }
+                .about-us-info-text{
+                    font-family: $font-text;
+                    font-size: clamp(0.813rem, 4vw - 1rem, 1.25rem);
+                }
+            }
+        }
+    }
+}

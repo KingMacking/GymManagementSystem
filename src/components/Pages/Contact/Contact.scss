@@ -1,0 +1,85 @@
+@import '../../sass/Mixins.scss';
+@import '../../sass/Variables.scss';
+
+.contact {
+    height: auto;
+    width: 100%;
+    &-banner {
+        background-image: url(https://images.unsplash.com/photo-1574680096145-d05b474e2155?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80);
+        background-size: cover;
+        background-position: top;
+        height: 90vh;
+        .banner-container {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            margin: 0;
+            padding: 0 10%;
+            text-align: center;
+            @include flex(column, center, flex-start, default);
+            .banner-title {
+                font-family: $font-principal;
+                color: $base;
+                font-size: clamp(1.765rem, 3vw + 1.5rem, 3.929rem);
+                margin-bottom: 10px;
+            }
+            .banner-text {
+                font-family: $font-text;
+                color: $base;
+                font-size: clamp(0.938rem, 4vw - 1rem, 1.25rem);
+            }
+            .banner-button-container{
+                width: fit-content;
+                .banner-button {
+                    width: fit-content;
+                    color: $secondary;
+                    margin-top: 20px;
+                    font-size: clamp(7.5rem, 13vw + 1rem, 9.375rem);
+                    font-family: $font-text;
+                }
+            }
+        }
+    }
+    .main-contact{
+        padding: 5% 15%;
+        background-color: $base;
+        .contact-social-media{
+            @include flex(column, default, center, default);
+            .social-media-title{
+                background-color: $primary;
+                min-width: 310px;
+                width: 30%;
+                padding: 10px 15px;
+                font-size: clamp(0.75rem, 2vw + 1rem, 2.5rem);
+                color: $base;
+                border-radius: 15px;
+                margin-bottom: 60px;
+                font-family: $font-principal;
+                text-align: center;
+                box-shadow: 10px 10px 9px -3px rgba(0,0,0,0.4);
+            }
+            .social-media-icons{
+                width: 70%;
+                min-width: 310px;
+                height: auto;
+                @include flex(default, space-evenly, center, wrap);
+                .social-media-icon{
+                    font-size: 140px;
+                    width: fit-content;
+                    padding: 25px;
+                    border-radius: 35px;
+                    min-width: 170px;
+                    margin: 0 10px 15px;
+                    background-color: $secondary;
+                    transition: all ease-in-out 150ms;
+                    color: $primary-shadow;
+                    &:hover{
+                        box-shadow: 10px 10px 9px -3px rgba(0,0,0,0.4);
+                        transform: scale(1.2);
+                        transition: all ease-in-out 150ms;
+                    }
+                }
+            }
+        }
+    }
+}

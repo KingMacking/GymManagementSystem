@@ -7,6 +7,8 @@ import * as yup from "yup";
 import { DateTime } from 'luxon'
 import { useUserContext } from '../../../../../context/UserContext'
 import Login from '../../Login/Login'
+import HomeBtn from '../HomeBtn/HomeBtn'
+import { toast } from 'react-toastify'
 
 import './FindClient.scss'
 
@@ -24,6 +26,18 @@ const FindClient = () => {
 
     const onSubmit = (data) => {
         getClientData(data.dni)
+        toast('Buscando cliente', {
+            position: "bottom-center",
+            autoClose: 1000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            icon: <Ring size={40} lineWeight={5} speed={2} color={"white"} />,
+            toastId: "searchClientToast"
+        });
     }
 
     const getClientData = async (clientId) => {
@@ -33,9 +47,32 @@ const FindClient = () => {
             if (resp.data()) {
                 setClientData({...resp.data()})
                 setIsLoading(false)
+                toast.success('Cliente encontrado', {
+                    position: "bottom-center",
+                    autoClose: 3000,
+                    hideProgressBar: true,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    pauseOnFocusLoss: false,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    toastId: "clientFoundToast"
+                })
             } else {
-                console.log("No existe el DNI ingresado")
                 setIsLoading(false)
+                toast.error('No existe cliente con el DNI ingresado', {
+                    position: "bottom-center",
+                    autoClose: 3000,
+                    hideProgressBar: true,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    pauseOnFocusLoss: false,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    toastId: "clientNotFoundToast"
+                })
             }
         })
     }
@@ -44,28 +81,31 @@ const FindClient = () => {
     if(user) {
         if (user.role === "admin") {
             return (
-                <div className='find-client'>
-                    <div className='find-client-container'>
-                        <h2 className='find-client-title'>BUSCAR CLIENTE</h2>
-                        <form className='find-client-form' onSubmit={handleSubmit(onSubmit)}>
-                            <p className='find-client-form-text'>Ingrese el DNI del cliente</p>
-                            <input className='find-client-form-input' type='text' {...register("dni")} placeholder='DNI del cliente' />
-                            {errors.dni && <p className='find-client-form-error'>{errors.dni.message}</p>}
-                            <button className='find-client-form-button' type='submit'>Buscar cliente</button>
-                        </form>
+                <>
+                    <HomeBtn />
+                    <div className='find-client'>
+                        <div className='find-client-container'>
+                            <h2 className='find-client-title'>BUSCAR CLIENTE</h2>
+                            <form className='find-client-form' onSubmit={handleSubmit(onSubmit)}>
+                                <p className='find-client-form-text'>Ingrese el DNI del cliente</p>
+                                <input className='find-client-form-input' type='text' {...register("dni")} placeholder='DNI del cliente' />
+                                {errors.dni && <p className='find-client-form-error'>{errors.dni.message}</p>}
+                                <button className='find-client-form-button' type='submit'>Buscar cliente</button>
+                            </form>
+                        </div>
+                        {isLoading ? <Ring size={100} lineWeight={5} speed={2} color={"white"} />
+                            :
+                            <div className='client-data-container'>
+                                <h3 className='client-data-title'>CLIENTE: {clientData.name && clientData.name.toUpperCase()}</h3>
+                                <p className='client-data-info'>DNI: {clientData.dni}</p>
+                                <p className='client-data-info'>Telefono: {clientData.phone}</p>
+                                <p className='client-data-info'>Ultimo pago: {clientData.paymentDate && (DateTime.fromISO(clientData.paymentDate).toLocaleString())}</p>
+                                <p className='client-data-info'>Siguiente pago: {clientData.nextPaymentDate && (DateTime.fromISO(clientData.nextPaymentDate).toLocaleString())}</p>
+                                <p className='client-data-info'>Pases restantes: {clientData.tickets}</p>
+                            </div>    
+                        }
                     </div>
-                    {isLoading ? <Ring size={100} lineWeight={5} speed={2} color={"white"} />
-                        :
-                        <div className='client-data-container'>
-                            <h3 className='client-data-title'>CLIENTE: {clientData.name && clientData.name.toUpperCase()}</h3>
-                            <p className='client-data-info'>DNI: {clientData.dni}</p>
-                            <p className='client-data-info'>Telefono: {clientData.phone}</p>
-                            <p className='client-data-info'>Ultimo pago: {clientData.paymentDate && (DateTime.fromISO(clientData.paymentDate).toLocaleString())}</p>
-                            <p className='client-data-info'>Siguiente pago: {clientData.nextPaymentDate && (DateTime.fromISO(clientData.nextPaymentDate).toLocaleString())}</p>
-                            <p className='client-data-info'>Pases restantes: {clientData.tickets}</p>
-                        </div>    
-                    }
-                </div>
+                </>
             )
         } else {
             return (

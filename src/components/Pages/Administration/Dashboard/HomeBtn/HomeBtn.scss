@@ -1,0 +1,24 @@
+@import '../../../../sass/Mixins.scss';
+@import '../../../../sass/Variables.scss';
+
+.home-btn{
+    padding: 20px;
+    width: fit-content;
+    background-color: $secondary;
+    color: $primary;
+    position:fixed;
+    bottom:1vh;
+    right:2vw;
+    cursor:pointer;
+    border-radius: 50%;
+    @include flex(default, center, center, default);
+    box-shadow: 10px 10px 9px -3px rgba(0,0,0,0.4);
+    &:hover{
+        background-color: $primary;
+        color: $secondary;
+    }
+    &-icon{
+        font-size: 40px;
+        width: auto;
+    }
+}

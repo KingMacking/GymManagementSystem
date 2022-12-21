@@ -7,6 +7,7 @@ import Login from '../../Login/Login';
 
 import './ViewAllClients.scss'
 import { Icon } from '@iconify/react';
+import HomeBtn from '../HomeBtn/HomeBtn';
 
 const ViewAllClients = () => {
     const [clients, setClients] = useState([]);
@@ -26,16 +27,19 @@ const ViewAllClients = () => {
     if(user) {
         if (user.role === "admin") {
             return (
-                <div className='all-clients-container'>
-                    {isLoading ? <Ring size={100} lineWeight={5} speed={2} color={"white"} />
-                        :
-                        clients.sort((a, b) => (a.name > b.name) ? 1 : (a.name < b.name) ? -1 : 0).map((client, index) => 
-                        (<Link className='all-clients-client' to={`/clients/${client.dni}`} key={index}>
-                            <Icon className='all-clients-client-icon' icon="material-symbols:person" inline={true} />
-                            <span className='all-clients-client-info'>{client.name}</span>
-                        </Link>))
-                    }
-                </div>
+                <>
+                    <HomeBtn />
+                    <div className='all-clients-container'>
+                        {isLoading ? <Ring size={100} lineWeight={5} speed={2} color={"white"} />
+                            :
+                            clients.sort((a, b) => (a.name > b.name) ? 1 : (a.name < b.name) ? -1 : 0).map((client, index) => 
+                            (<Link className='all-clients-client' to={`/clients/${client.dni}`} key={index}>
+                                <Icon className='all-clients-client-icon' icon="material-symbols:person" inline={true} />
+                                <span className='all-clients-client-info'>{client.name}</span>
+                            </Link>))
+                        }
+                    </div>
+                </>
             )
         } else {
             return (

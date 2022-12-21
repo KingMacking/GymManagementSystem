@@ -7,6 +7,7 @@ import * as yup from "yup";
 import { DateTime } from "luxon";
 
 import './AssistConfirmation.scss'
+import { toast } from 'react-toastify';
 
 const generateAssistConfirmationSchema = yup.object().shape({
     dni: yup.string().min(7, "Ingresa un DNI valido").max(8, "Ingresa un DNI valido").required("Debes ingresar un DNI")
@@ -19,8 +20,20 @@ const AssistConfirmation = () => {
     const [isLoading, setIsLoading] = useState()
 
     const onSubmit = (data) => {
-        setIsLoading(true)
         ConfirmAssist(data.dni)
+        toast('Registrando asistencia', {
+            position: "bottom-center",
+            autoClose: 1000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: false,
+            pauseOnFocusLoss: false,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            icon: <Ring size={40} lineWeight={5} speed={2} color={"white"} />,
+            toastId: "registerAssistToast"
+        });
     }
 
     const ConfirmAssist = async (docId) => {
@@ -29,28 +42,55 @@ const AssistConfirmation = () => {
 
         await getDoc(queryClient)
         .then(resp => {
-            console.log(resp)
             if (resp.data()) {
-                if(resp.data().nextPaymentDate <= DateTime.now().toISODate()){
-                    console.log("No puedes ingresar por falta de pago")
+                if(resp.data().nextPaymentDate <= DateTime.now().toISODate() || resp.data().tickets <= 0){
+                    setClientData({...resp.data()})
+                    toast.error("Error al registrar la asistencia", {
+                        position: "bottom-center",
+                        autoClose: 3000,
+                        hideProgressBar: true,
+                        closeOnClick: true,
+                        pauseOnHover: false,
+                        pauseOnFocusLoss: false,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                        toastId: "assistRegisterErrorToast"
+                    });
                 } else {
                     batch.update(resp.ref, {
                         tickets: (resp.data().tickets - 1 >= 0 && resp.data().tickets - 1)
                     })
                     batch.commit()
                     setClientData({...resp.data()})
+                    toast.success('Asistencia registrada', {
+                        position: "bottom-center",
+                        autoClose: 3000,
+                        hideProgressBar: true,
+                        closeOnClick: true,
+                        pauseOnHover: false,
+                        pauseOnFocusLoss: false,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "dark",
+                        toastId: "assistRegisteredToast"
+                    });
                 }
             } else {
-                console.log("Cliente inexistente o DNI erroneo")
-                
+                toast.error("Cliente inexistente o DNI erroneo", {
+                    position: "bottom-center",
+                    autoClose: 3000,
+                    hideProgressBar: true,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    pauseOnFocusLoss: false,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    toastId: "clientNotFoundToast"
+                });
             }
         })
-        .finally(
-            setTimeout(() => {
-                setIsLoading(false)
-            }, 2500)
-        )
-        
     }
     return (
         <div className='turn-confirm'>
@@ -63,13 +103,12 @@ const AssistConfirmation = () => {
                     <button className='form-button' type='submit'>Confirmar asistencia</button>
                 </form>
             </div>
-            {isLoading ? <Ring className='container' size={100} lineWeight={5} speed={2} color={"white"} />
-                :
+            {
                 clientData && 
                 <div className='assist-confirmation-detail'>
                     <div className='detail-container'>
                         <h3 className='detail-title'>BIENVENIDO {clientData.name.toUpperCase()}</h3>
-                        {clientData.nextPaymentDate >= DateTime.now().toLocaleString() ?
+                        {clientData.nextPaymentDate <= DateTime.now().toISODate() ?
                             <>
                                 <p className='detail-text'>No puedes ingresar al gimnasio ya que debes abonar tus pases del mes</p>
                                 <p className='detail-text'>Tu ultima fecha de pago fue {(DateTime.fromISO(clientData.paymentDate).toLocaleString())}</p>
