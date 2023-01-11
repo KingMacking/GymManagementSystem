@@ -27,8 +27,8 @@ const DebtorsListContainer = () => {
         })
     }
 
-    const getDebtors = () => {
-        getDocs(queryCollection)
+    const getDebtors = async () => {
+        await getDocs(queryCollection)
         .then(resp => setDebtors(filterDebtors(resp.docs.map(debtor => ({...debtor.data()})))))
         .finally(setIsLoading(false))
     }

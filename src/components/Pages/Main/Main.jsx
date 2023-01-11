@@ -10,7 +10,7 @@ const Main = () => {
                 <div className='banner-container row'>
                     <h2 className='banner-title col-md-6'>BIENVENIDO A REAL TRAINING</h2>
                     <h3 className='banner-subtitle col-md-6'>La casa de la fuerza</h3>
-                    <p className='banner-text col-md-6'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, numquam asperiores veritatis iusto in, saepe velit non pariatur nulla laudantium ut magnam aspernatur quam sit? Laborum eius possimus eos nemo!</p>
+                    <p className='banner-text col-md-6'>Al entrar aquí, aceptas dar el 100% de lo que tenés. No hay excusas ni segundas oportunidades. Todos los días, cada instante es una oportunidad para superarte, para ser más, para alcanzar lo mejor. No pierdas el tiempo. Entrena duro, obtené resultados,  al final del día mírate al espejo y pregúntate si diste todo de vos.</p>
                     <Link className='col-md-6'><button className='banner-button'>Empeza ya</button></Link>
                 </div>
             </section>
@@ -45,7 +45,7 @@ const Main = () => {
                     <div className='about-us-detail'>
                         <h2 className='about-us-title'>SOBRE NOSOTROS</h2>
                         <h3 className='about-us-subtitle'>Somos la casa de la fuerza</h3>
-                        <p className='about-us-text'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam soluta architecto iure natus modi id assumenda, aperiam temporibus doloremque eveniet aspernatur, fugiat corporis quae provident totam quaerat et quasi! Iure? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit minus dolores atque, voluptate quod consequatur ducimus tempora? Suscipit magnam corrupti doloribus ab eligendi, aspernatur ipsa ratione, odit voluptatem, tempore unde.</p>
+                        <p className='about-us-text'>Desde 2011 trabajamos la principal capacidad del cuerpo, la fuerza, que es literalmente el único factor transferible a cualquier actividad que realices en tu vida cotidiana, sea deportiva o no. Aseguramos que el entrenamiento de la fuerza es la mejor medicina y antídoto contra la pandemia de la obesidad, la inflamación, deterioro neural, astenia, estrés, osteosarcopenia, provocada por el sedentarismo junto a malos y erróneos hábitos alimenticios.</p>
                     </div>
                 </div>
             </section>

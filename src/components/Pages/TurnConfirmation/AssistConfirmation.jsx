@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from "@hookform/resolvers/yup";
-import { doc, getDoc, getFirestore, writeBatch } from 'firebase/firestore'
+import { collection, doc, arrayUnion, getDoc, getFirestore, setDoc, updateDoc, writeBatch } from 'firebase/firestore'
 import { Ring } from '@uiball/loaders';
 import * as yup from "yup";
 import { DateTime } from "luxon";
@@ -17,7 +17,7 @@ const AssistConfirmation = () => {
     const {register, handleSubmit, formState: {errors}} = useForm ({resolver: yupResolver(generateAssistConfirmationSchema)});
     const db = getFirestore()
     const [clientData, setClientData] = useState()
-    const [isLoading, setIsLoading] = useState()
+    const [isStaff, setIsStaff] = useState(false)
 
     const onSubmit = (data) => {
         ConfirmAssist(data.dni)
@@ -43,26 +43,10 @@ const AssistConfirmation = () => {
         await getDoc(queryClient)
         .then(resp => {
             if (resp.data()) {
-                if(resp.data().nextPaymentDate <= DateTime.now().toISODate() || resp.data().tickets <= 0){
+                if(resp.data().staff) {
                     setClientData({...resp.data()})
-                    toast.error("Error al registrar la asistencia", {
-                        position: "bottom-center",
-                        autoClose: 3000,
-                        hideProgressBar: true,
-                        closeOnClick: true,
-                        pauseOnHover: false,
-                        pauseOnFocusLoss: false,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "colored",
-                        toastId: "assistRegisterErrorToast"
-                    });
-                } else {
-                    batch.update(resp.ref, {
-                        tickets: (resp.data().tickets - 1 >= 0 && resp.data().tickets - 1)
-                    })
-                    batch.commit()
-                    setClientData({...resp.data()})
+                    RegisterEntry(resp.data())
+                    setIsStaff(true)
                     toast.success('Asistencia registrada', {
                         position: "bottom-center",
                         autoClose: 3000,
@@ -75,6 +59,41 @@ const AssistConfirmation = () => {
                         theme: "dark",
                         toastId: "assistRegisteredToast"
                     });
+                } else {
+                    if(resp.data().nextPaymentDate <= DateTime.now().toISODate() || resp.data().tickets <= 0){
+                        setClientData({...resp.data()})
+                        toast.error("Error al registrar la asistencia", {
+                            position: "bottom-center",
+                            autoClose: 3000,
+                            hideProgressBar: true,
+                            closeOnClick: true,
+                            pauseOnHover: false,
+                            pauseOnFocusLoss: false,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "colored",
+                            toastId: "assistRegisterErrorToast"
+                        });
+                    } else {
+                        batch.update(resp.ref, {
+                            tickets: (resp.data().tickets - 1 >= 0 && resp.data().tickets - 1)
+                        })
+                        batch.commit()
+                        setClientData({...resp.data()})
+                        RegisterEntry(resp.data())
+                        toast.success('Asistencia registrada', {
+                            position: "bottom-center",
+                            autoClose: 3000,
+                            hideProgressBar: true,
+                            closeOnClick: true,
+                            pauseOnHover: false,
+                            pauseOnFocusLoss: false,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "dark",
+                            toastId: "assistRegisteredToast"
+                        });
+                    }
                 }
             } else {
                 toast.error("Cliente inexistente o DNI erroneo", {
@@ -92,6 +111,16 @@ const AssistConfirmation = () => {
             }
         })
     }
+
+    const RegisterEntry = async (data) => {
+        const queryEntry = doc(db, 'entries', DateTime.now().toISODate())
+        const entryTime = DateTime.now().toObject()
+        const dataObj = {
+            name: data.name,
+            time: `${entryTime.hour.toString().length === 1 ? "0"+entryTime.hour : entryTime.hour}:${entryTime.minute.toString().length === 1 ? "0"+entryTime.minute : entryTime.minute}`
+        }
+        await setDoc(queryEntry, { entries: {clients: arrayUnion(dataObj)}}, {merge: true})
+    }
     return (
         <div className='turn-confirm'>
             <div className='assist-confirmation'>
@@ -104,8 +133,16 @@ const AssistConfirmation = () => {
                 </form>
             </div>
             {
-                clientData && 
-                <div className='assist-confirmation-detail'>
+                clientData &&
+                (isStaff ?
+                (<div className='assist-confirmation-detail'>
+                    <div className='detail-container'>
+                        <h3 className='detail-title'>BIENVENIDO {clientData.name.toUpperCase()}</h3>
+                        <p className='detail-text'>¡A entrenar!</p>
+                    </div>
+                </div> )
+                :
+                (<div className='assist-confirmation-detail'>
                     <div className='detail-container'>
                         <h3 className='detail-title'>BIENVENIDO {clientData.name.toUpperCase()}</h3>
                         {clientData.nextPaymentDate <= DateTime.now().toISODate() ?
@@ -124,7 +161,7 @@ const AssistConfirmation = () => {
                                     <p className='detail-text'>¡No tienes mas pases para utilizar! Comunicate con el coach para gestionar mas.</p>
                         }
                     </div>
-                </div>
+                </div>))
             }
         </div>
     )

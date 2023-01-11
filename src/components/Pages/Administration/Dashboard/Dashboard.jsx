@@ -31,6 +31,10 @@ const Dashboard = () => {
                         <Icon className='dashboard-item-icon' icon="material-symbols:person-search-rounded" inline={true} />
                         <h2 className='dashboard-item-title'>Buscar un cliente</h2>
                     </Link>
+                    <Link className='dashboard-item' to='/dayentries'>
+                        <Icon className='dashboard-item-icon' icon="game-icons:archive-register" inline={true} />
+                        <h2 className='dashboard-item-title'>Entradas del día</h2>
+                    </Link>
                     <Link className='dashboard-item' to='/debtors'>
                         <Icon className='dashboard-item-icon' icon="material-symbols:money-off" inline={true} />
                         <h2 className='dashboard-item-title'>Ver deudores</h2>

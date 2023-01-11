@@ -16,6 +16,7 @@ import Contact from "./components/Pages/Contact/Contact";
 import TheMethod from "./components/Pages/TheMethod/TheMethod";
 import AboutUs from "./components/Pages/AboutUs/AboutUs";
 import Footer from "./components/Footer/Footer";
+import DayEntries from "./components/Pages/Administration/Dashboard/DayEntries/DayEntries";
 import { ToastContainer } from "react-toastify";
 
 import './App.css'
@@ -40,6 +41,7 @@ function App() {
                     <Route path="/registerpayment" element={<RegisterPayment />} />
                     <Route path="/debtors" element={<DebtorsListContainer />} />
                     <Route path="/clients" element={<ViewAllClients />} />
+                    <Route path="/dayentries" element={<DayEntries />} />
                     <Route path="/clients/:clientId" element={<ClientDetailContainer />} />
                 </Routes>
                 <Footer />
