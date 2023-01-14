@@ -23,7 +23,7 @@ const DebtorsListContainer = () => {
 
     const filterDebtors = (clientsData) => {
         return clientsData.filter(client => {
-            return ((client.nextPaymentDate) < DateTime.now().toISODate())
+            return (((client.nextPaymentDate) < DateTime.now().toISODate()) && !client.staff)
         })
     }
 
