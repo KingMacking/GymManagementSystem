@@ -21,6 +21,19 @@ La app esta hecha en base a que cualquier gimnasio pueda utilizarla de manera si
 - **Engagement:** Existen distintos llamados a la acción para que un cliente nuevo se contacte en inicie su entrenamiento en el gimnasio.
 - **Dashboard:** Panel de control para la administración completamente funcional, el cual permite agergar clientes, eliminarlos, registrar pagos, controlar las asistencias del dia, controlas los planes de los clientes y ver deudores.
 
+## Probar la app
+
+Para poder probar al 100% la aplicación, accediendo al panel de administración, se debe pasar por una autenticación la cual es manejada por firebase, asi como el resto de datos.
+Para poder loguearse como administrador se deben utilizar los siguentes datos:
+- Email: admin@admin.com
+- Password: admin1234
+
+A su vez, como medida extra de seguridad la aplicación posee una comprobación de roles del usuario que inicia sesión.
+Es decir, si nos logueamos desde un usuario que no posee el rol de administrador, la app nos mostrara un error.
+Para testear esto se pueden utilizar los siguentes datos:
+- Email: user@user.com
+- Password: user1234
+
 ## Tecnologias Utilizadas
 ### _Lenguajes_
 <p align='center'>
