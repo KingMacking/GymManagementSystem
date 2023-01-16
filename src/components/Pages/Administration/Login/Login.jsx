@@ -1,10 +1,11 @@
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth'
 import { useForm } from 'react-hook-form';
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import app from '../../../../firebase/config'
 
 import './Login.scss'
+import { Link } from 'react-router-dom';
 
 const auth = getAuth(app)
 const generateLoginSchema = yup.object().shape({
@@ -37,6 +38,7 @@ const Login = () => {
                 <input className='login-input' type="password" {...register("password")} placeholder="Contraseña"/>
                 {errors.password && <p className='login-error'>{errors.password.message}</p>}
                 <button className='login-button' type='submit'>Iniciar sesion</button>
+                <Link className='login-button' to="/main">Volver a inicio</Link>
             </form>
         </div>
     )

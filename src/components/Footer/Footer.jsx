@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import logoNavbar from '../../assets/logo-navbar.svg'
+import logoNavbar from '../../assets/logo-default.svg'
 import './Footer.scss'
 
 const Footer = () => {
@@ -29,13 +29,12 @@ const Footer = () => {
                     <div className='footer-group'>
                             <h2 className='footer-title'>NAVEGACIÓN</h2>
                             <Link className='footer-link' to='/about-us'>¿Quienes somos?</Link>
-                            <Link className='footer-link' to='/themethod'>El metodo</Link>
                             <Link className='footer-link' to='/dashboard'>Panel administración</Link>
                     </div>
                     <div className='footer-group'>
                             <h2 className='footer-title'>CONTACTO</h2>
-                            <a className='footer-link' href='https://wa.me/5493425954002' target='_blank'>WhatsApp</a>
-                            <a className='footer-link' href='https://www.instagram.com/realtraining/' target='_blank'>Instagram</a>
+                            <a className='footer-link' href='https://wa.me/' target='_blank'>WhatsApp</a>
+                            <a className='footer-link' href='https://www.instagram.com/' target='_blank'>Instagram</a>
                     </div>
                 </nav>
             </footer>

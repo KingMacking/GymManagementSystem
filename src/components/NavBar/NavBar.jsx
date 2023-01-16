@@ -1,11 +1,9 @@
 import { Icon } from '@iconify/react'
 import { useEffect } from 'react'
 import { useState } from 'react'
-import { Link, useLocation, useParams } from 'react-router-dom'
-import logoNavbar from '../../assets/logo-navbar.svg'
+import { Link, useLocation} from 'react-router-dom'
+import logoNavbar from '../../assets/logo-default.svg'
 import './NavBar.scss'
-
-// TODO: Navbar solo en el sitio main (useParams)
 
 const NavBar = () => {
     const [collapsed, setCollapsed] = useState(true)
@@ -40,9 +38,6 @@ const NavBar = () => {
                                         <li><Link className='dropdown-item' to='/assistconfirmation'>Confirmar asistencia</Link></li>
                                         <li><Link className='dropdown-item' to='/plans'>Consultar planes</Link></li>
                                     </ul>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/the-method">El metodo</Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/about-us">Quienes somos</Link>

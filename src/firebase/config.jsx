@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCahSsKl47_7TDPCfWqO8LBHMnr0vESFrE",
-    authDomain: "real-training-f9925.firebaseapp.com",
-    projectId: "real-training-f9925",
-    storageBucket: "real-training-f9925.appspot.com",
-    messagingSenderId: "273123736723",
-    appId: "1:273123736723:web:c0e5ce8e8c5d132cb36166"
+    apiKey: "AIzaSyCFRvKm0xJZoQyfUfk0k3WAaulLoqMlSx8",
+    authDomain: "gym-management-system-16674.firebaseapp.com",
+    projectId: "gym-management-system-16674",
+    storageBucket: "gym-management-system-16674.appspot.com",
+    messagingSenderId: "389628947430",
+    appId: "1:389628947430:web:aae105bcdf64a1e8724427"
 };
 
 // Initialize Firebase

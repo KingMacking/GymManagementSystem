@@ -14,7 +14,7 @@ const UserContextProvider = ({children}) => {
     const db = getFirestore()
 
     const getUserRole = async (uid) => {
-        const docInfo = await getDoc(doc(db, 'users', uid))
+        const docInfo = await getDoc(doc(db, 'usuarios', uid))
         const userInfo = docInfo.data().role
         return userInfo
     }

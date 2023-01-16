@@ -20,7 +20,7 @@ const Plans = () => {
                             <h3 className='plans-card-title'>4 PASES</h3>
                             <p className='plans-card-text'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed earum unde nulla sint, nam enim quasi quaerat neque perferendis reiciendis libero, provident, optio eligendi non aliquid vero soluta adipisci aperiam.</p>
                             <p className='plans-card-price'>$2500</p>
-                            <a href='https://wa.me/5493425954002?text=Me%20gustaria%20empezar%20a%20entrenar%20con%20el%20plan%20de%204%20pases' target='_blank'><button className='plans-card-button'>Solicitar</button></a>
+                            <a href='https://wa.me' target='_blank'><button className='plans-card-button'>Solicitar</button></a>
                         </div>
                     </div>
                     <div className='plans-card'>
@@ -28,7 +28,7 @@ const Plans = () => {
                             <h3 className='plans-card-title'>8 PASES</h3>
                             <p className='plans-card-text'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed earum unde nulla sint, nam enim quasi quaerat neque perferendis reiciendis libero, provident, optio eligendi non aliquid vero soluta adipisci aperiam.</p>
                             <p className='plans-card-price'>$2800</p>
-                            <a href='https://wa.me/5493425954002?text=Me%20gustaria%20empezar%20a%20entrenar%20con%20el%20plan%20de%208%20pases' target='_blank'><button className='plans-card-button'>Solicitar</button></a>
+                            <a href='https://wa.me' target='_blank'><button className='plans-card-button'>Solicitar</button></a>
                         </div>
                     </div>
                     <div className='plans-card'>
@@ -36,7 +36,7 @@ const Plans = () => {
                             <h3 className='plans-card-title'>12 PASES</h3>
                             <p className='plans-card-text'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed earum unde nulla sint, nam enim quasi quaerat neque perferendis reiciendis libero, provident, optio eligendi non aliquid vero soluta adipisci aperiam.</p>
                             <p className='plans-card-price'>$3000</p>
-                            <a href='https://wa.me/5493425954002?text=Me%20gustaria%20empezar%20a%20entrenar%20con%20el%20plan%20de%2012%20pases' target='_blank'><button className='plans-card-button'>Solicitar</button></a>
+                            <a href='https://wa.me' target='_blank'><button className='plans-card-button'>Solicitar</button></a>
                         </div>
                     </div>
                     <div className='plans-card'>
@@ -44,7 +44,7 @@ const Plans = () => {
                             <h3 className='plans-card-title'>16 PASES</h3>
                             <p className='plans-card-text'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed earum unde nulla sint, nam enim quasi quaerat neque perferendis reiciendis libero, provident, optio eligendi non aliquid vero soluta adipisci aperiam.</p>
                             <p className='plans-card-price'>$3200</p>
-                            <a href='https://wa.me/5493425954002?text=Me%20gustaria%20empezar%20a%20entrenar%20con%20el%20plan%20de%2016%20pases' target='_blank'><button className='plans-card-button'>Solicitar</button></a>
+                            <a href='https://wa.me' target='_blank'><button className='plans-card-button'>Solicitar</button></a>
                         </div>
                     </div>
                     <div className='plans-card'>
@@ -52,7 +52,7 @@ const Plans = () => {
                             <h3 className='plans-card-title'>20 PASES</h3>
                             <p className='plans-card-text'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed earum unde nulla sint, nam enim quasi quaerat neque perferendis reiciendis libero, provident, optio eligendi non aliquid vero soluta adipisci aperiam.</p>
                             <p className='plans-card-price'>$3500</p>
-                            <a href='https://wa.me/5493425954002?text=Me%20gustaria%20empezar%20a%20entrenar%20con%20el%20plan%20de%2020%20pases' target='_blank'><button className='plans-card-button'>Solicitar</button></a>
+                            <a href='https://wa.me' target='_blank'><button className='plans-card-button'>Solicitar</button></a>
                         </div>
                     </div>
                 </div>

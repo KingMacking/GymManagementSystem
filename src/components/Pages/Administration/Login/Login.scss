@@ -57,6 +57,10 @@
             border: none;
             border-radius: 15px;
             height: 60px;
+            margin-bottom: 10px;
+            text-align: center;
+            @include flex(default, center, center, default);
+            text-decoration: none;
             &:hover {
                 border: solid 2px $secondary;
                 background-color: $primary-shadow;
