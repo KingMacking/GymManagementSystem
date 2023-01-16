@@ -1,7 +1,7 @@
 # [_**SISTEMA DE ADMINISTRACION DE GIMNASIO**_](https://gym-system-management.netlify.app/main "Live app")
 
 <p align='center'>
-    👑¡Visualiza la app haciendo click en la imagen!👑
+    🏋🏻‍♀️¡Visualiza la app haciendo click en la imagen!🏋🏻‍♀️
 </p>
 <p align='center'>
     <a href="https://kingdom-store.netlify.app/"><img height="80"src="https://github.com/KingMacking/GymManagementSystem/blob/public-branch/src/assets/logo-default.svg"></a>
