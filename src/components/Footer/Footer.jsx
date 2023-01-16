@@ -23,7 +23,7 @@ const Footer = () => {
                     <Link className="footer-brand" to="/main"><img src={logoNavbar} alt=""/></Link>
                     <div className='footer-group'>
                             <h2 className='footer-title'>CLIENTES</h2>
-                            <Link className='footer-link' to='/turnconfirmation'>Confirmar asistencia</Link>
+                            <Link className='footer-link' to='/assistconfirmation'>Confirmar asistencia</Link>
                             <Link className='footer-link' to='/plans'>Consultar planes</Link>
                     </div>
                     <div className='footer-group'>
