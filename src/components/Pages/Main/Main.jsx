@@ -11,7 +11,7 @@ const Main = () => {
                     <h2 className='banner-title col-md-6'>BIENVENIDO</h2>
                     <h3 className='banner-subtitle col-md-6'>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3>
                     <p className='banner-text col-md-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti dolore officiis alias qui minima rem necessitatibus suscipit eos autem labore harum, aperiam voluptate. Blanditiis, nulla? Suscipit nam sed illum ipsam.</p>
-                    <Link className='col-md-6'><button className='banner-button'>Empeza ya</button></Link>
+                    <Link className='col-md-6' to="/plans"><button className='banner-button'>Empeza ya</button></Link>
                 </div>
             </section>
             <section className='main-gym'>
