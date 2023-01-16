@@ -4,7 +4,7 @@
     🏋🏻‍♀️¡Visualiza la app haciendo click en la imagen!🏋🏻‍♀️
 </p>
 <p align='center'>
-    <a href="https://kingdom-store.netlify.app/"><img height="80"src="https://github.com/KingMacking/GymManagementSystem/blob/public-branch/src/assets/logo-default.svg"></a>
+    <a href="https://gym-system-management.netlify.app/main"><img height="80"src="https://github.com/KingMacking/GymManagementSystem/blob/public-branch/src/assets/logo-default.svg"></a>
 </p>
 
 ## Web app para administación de gimnasios
