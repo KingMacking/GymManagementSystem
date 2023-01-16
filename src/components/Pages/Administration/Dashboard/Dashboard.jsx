@@ -39,6 +39,10 @@ const Dashboard = () => {
                         <Icon className='dashboard-item-icon' icon="material-symbols:money-off" inline={true} />
                         <h2 className='dashboard-item-title'>Ver deudores</h2>
                     </Link>
+                    <Link className='dashboard-item home' to='/debtors'>
+                        <Icon className='dashboard-item-icon' icon="material-symbols:house" inline={true} />
+                        <h2 className='dashboard-item-title'>Volver a inicio</h2>
+                    </Link>
                     <button className='dashboard-button' onClick={()=>signOut(auth)}><Icon icon="mdi:sign-out" inline={true} />Cerrar sesión</button>
                 </div>
             )} else {
