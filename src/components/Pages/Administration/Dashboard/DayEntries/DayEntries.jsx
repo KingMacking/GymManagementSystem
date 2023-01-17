@@ -40,7 +40,8 @@ const DayEntries = () => {
                             <div className="dayentries-container">
                                 <h2 className="dayentries-title">Entradas del dia {DateTime.now().toLocaleString()}</h2>
                                 <div className="dayentries-entries">
-                                    {entriesData.entries.clients.map((client, index)=>(<p className="dayentries-entry" key={index}>{client.name} ingreso a las {client.time}</p>))}
+                                    {entriesData ? entriesData.entries.clients.map((client, index)=>(<p className="dayentries-entry" key={index}>{client.name} ingreso a las {client.time}</p>))
+                                    : <p className="dayentries-entry">No existen entradas en el dia de hoy.</p>}
                                 </div>
                             </div>
                         }
