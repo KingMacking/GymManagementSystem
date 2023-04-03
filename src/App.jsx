@@ -11,10 +11,6 @@ import UserContextProvider from "./context/UserContext";
 import ClientDetailContainer from "./components/Pages/Administration/Dashboard/ClientDetail/ClientDetailContainer";
 import DebtorsListContainer from "./components/Pages/Administration/Dashboard/Debtors/DebtorsListContainer";
 import RegisterPayment from "./components/Pages/Administration/Dashboard/RegisterPayment/RegisterPayment";
-import Plans from "./components/Pages/Plans/Plans";
-import Contact from "./components/Pages/Contact/Contact";
-import TheMethod from "./components/Pages/TheMethod/TheMethod";
-import AboutUs from "./components/Pages/AboutUs/AboutUs";
 import Footer from "./components/Footer/Footer";
 import DayEntries from "./components/Pages/Administration/Dashboard/DayEntries/DayEntries";
 import { ToastContainer } from "react-toastify";
@@ -30,10 +26,6 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Navigate to="/main" />}/>
                     <Route path="/main" element={<Main />} />
-                    <Route path="/plans" element={<Plans />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/the-method" element={<TheMethod />} />
-                    <Route path="/about-us" element={<AboutUs />} />
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/assistconfirmation" element={<AssistConfirmation />} />
                     <Route path="/addclient" element={<AddNewClient />} />

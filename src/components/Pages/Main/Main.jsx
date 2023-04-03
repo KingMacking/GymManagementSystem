@@ -20,21 +20,18 @@ const Main = () => {
                         <div className='gym-item-info'>
                             <Icon className='gym-item-icon' icon="game-icons:progression" inline={true} />
                             <h3 className='gym-item-title'>PROGRESO</h3>
-                            <p className='gym-item-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, est iusto. Dignissimos, eaque ducimus tempore facere quas sint molestiae reiciendis quis cum dolorem quidem minus hic, eius iusto. Sequi, nisi.</p>
                         </div>
                     </div>
                     <div className='gym-item'>
                         <div className='gym-item-info'>
                             <Icon className='gym-item-icon' icon="medical-icon:i-nutrition" inline={true} />
                             <h3 className='gym-item-title'>NUTRICION</h3>
-                            <p className='gym-item-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, est iusto. Dignissimos, eaque ducimus tempore facere quas sint molestiae reiciendis quis cum dolorem quidem minus hic, eius iusto. Sequi, nisi.</p>
                         </div>
                     </div>
                     <div className='gym-item'>
                         <div className='gym-item-info'>
                             <Icon className='gym-item-icon' icon="map:gym" inline={true} />
                             <h3 className='gym-item-title'>EJERCICIO</h3>
-                            <p className='gym-item-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, est iusto. Dignissimos, eaque ducimus tempore facere quas sint molestiae reiciendis quis cum dolorem quidem minus hic, eius iusto. Sequi, nisi.</p>
                         </div>
                     </div>
                 </div>

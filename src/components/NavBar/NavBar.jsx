@@ -34,21 +34,8 @@ const NavBar = () => {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav">
-                                <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href='#' role='button' data-bs-toggle='dropdown'>Clientes</a>
-                                    <ul className='dropdown-menu'>
-                                        <li><Link className='dropdown-item' to='/assistconfirmation'>Confirmar asistencia</Link></li>
-                                        <li><Link className='dropdown-item' to='/plans'>Consultar planes</Link></li>
-                                    </ul>
-                                </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/the-method">El metodo</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/about-us">Quienes somos</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/contact">Contacto</Link>
+                                    <Link className='nav-link' to='/assistconfirmation'>Confirmar asistencia</Link>
                                 </li>
                             </ul>
                         </div>
